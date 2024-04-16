@@ -1,0 +1,183 @@
+@import url("fontawesome-all.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    width: 256px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.flex_body {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height: 100px;
+}
+
+.body_header {
+    font-family: 'Canela Deck', serif;
+    text-align: center;
+    font-size: 35pt;
+    margin-bottom: -30px;
+    margin-top: -10px;
+    /* transform: scale(2); */
+    /* padding-bottom: 20px; */
+    /* padding-top: 20px; */
+}
+
+.body_header_right {
+    font-family: 'Canela Deck', serif;
+    text-align: right;
+    font-size: 35pt;
+
+}
+
+header {
+    /* display: flex; */
+    /* justify-content: space-between; Optional: add some space between the items */
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+}
+
+.content {
+    width: 512px;
+    height: 512px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.content_body {
+    font-family: 'Canela Deck', serif;
+    font-size: large;
+    line-height: 26px;
+}
+
+.content_body bottom {
+    position: fixed;
+    bottom: 20%;
+}
+
+.return_link {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.project_name {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    padding-left: 2%;
+    font-size: 13pt;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.index_row_container {
+    width: 130px;
+    font-family: 'Monospace', monospace;
+    font-size: 100%;
+    padding: 5px;
+    outline: 1px solid #8f8f8f;
+    transform: translateX(50%);
+}
+
+.left_row_container {
+    width: 250px;
+    font-family: 'Monospace', monospace;
+    font-size: 100%;
+    padding: 5px;
+    outline: 1px solid #8f8f8f;
+    margin: 10px;
+}
+
+.index_row {
+    margin: 2px;
+    line-height: 26px;
+	display: flex;
+	justify-content: left;
+}
+
+.icon {
+    text-decoration: none;
+    position: relative;
+    text-decoration: none;
+}
+
+.icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    text-transform: none !important;
+    vertical-align: middle;
+    text-align: center;
+    width : 1.5em;
+    /* font-family: 'Font Awesome 5 Free'; */
+}
+
+/* navigation bar */
+nav {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 60px;
+    border-bottom: 1px solid #8f8f8f;
+}
+
+nav a {
+    color: #222222;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #696969;
+}
+
+.nav_header {
+    font-family: 'Canela Deck', serif;
+    font-size: 85%;
+    grid-column: 1;
+}
+
+.nav_links {
+    font-family: 'Monospace', monospace;
+    text-align: center;
+    grid-column: 2;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 100px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+    border: 1px solid #8f8f8f;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}

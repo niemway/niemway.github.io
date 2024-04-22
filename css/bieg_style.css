@@ -90,8 +90,8 @@ header {
     grid-gap: 5px;
     font-size: 100%;
     padding: 5px;
-    outline: 1px solid #8f8f8f;
-    /* border-radius: 4px; */
+    outline: 5px solid #37243d;
+    border-radius: 20px;
     margin: 10px;
 }
 

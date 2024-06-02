@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "Canela Deck";
+    src: url("/static/fonts/caneladeck_bold.woff2") format("woff2");
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "Futura Regular";
+    src: url("/static/fonts/futura_regular.woff2") format("woff2");
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "Monospace";
+    font-display: swap;
+    font-weight: 100;
+    font-stretch: expanded;
+    font-style: normal;
+    src: url("/static/fonts/IosevkaSlab-ExtendedThin.woff2") format("woff2");
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "Monospace";
+    font-display: swap;
+    font-weight: 200;
+    font-stretch: expanded;
+    font-style: normal;
+    src: url("/static/fonts/IosevkaSlab-ExtendedExtraLight.woff2")
+        format("woff2");
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "Monospace";
+    font-display: swap;
+    font-weight: 300;
+    font-stretch: expanded;
+    font-style: normal;
+    src: url("/static/fonts/IosevkaSlab-ExtendedLight.woff2") format("woff2");
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "Monospace";
+    font-display: swap;
+    font-weight: 400;
+    font-stretch: expanded;
+    font-style: normal;
+    src: url("/static/fonts/IosevkaSlab-Extended.woff2") format("woff2");
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "Monospace";
+    font-display: swap;
+    font-weight: 500;
+    font-stretch: expanded;
+    font-style: normal;
+    src: url("/static/fonts/IosevkaSlab-ExtendedMedium.woff2") format("woff2");
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "Monospace";
+    font-display: swap;
+    font-weight: 700;
+    font-stretch: expanded;
+    font-style: normal;
+    src: url("/static/fonts/IosevkaSlab-ExtendedBold.woff2") format("woff2");
+    -webkit-font-smoothing: antialiased;
+}

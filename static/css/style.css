@@ -222,3 +222,44 @@ nav a:hover {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
+@media screen and (max-width: 600px) {
+    
+    .body {
+        width: 100%;
+        margin-top: 20%;
+    }
+    .content_body {
+        text-align: center;
+    }
+    bottom {
+        bottom: 20%;
+    }
+    .index_row_container {
+        width: auto;
+        transform: translateX(-50%);
+    }
+    .index_row {
+        font-size: 15pt;
+    }
+    .project_row {
+        line-height: normal;
+    }
+    .project_name {
+        font-size: 2em;
+        padding: 0;
+    }
+    .content {
+        width: 100%;
+        margin-top: 17%;
+    }
+
+    nav {
+        height: auto;
+        padding-top: 10%;
+    }
+
+    .nav_header {
+        display: none;
+    }
+}

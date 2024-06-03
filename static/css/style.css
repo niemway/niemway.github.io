@@ -254,12 +254,13 @@ nav a:hover {
     }
     .content {
         width: 100%;
-        margin-top: 10%;
+        margin-top: 11%;
     }
 
     nav {
         height: auto;
         padding-top: 4%;
+        font-size: 1.3em;
     }
 
     .nav_header {

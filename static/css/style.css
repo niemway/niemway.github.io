@@ -223,7 +223,7 @@ nav a:hover {
     display: block;
 }
 
-@media screen and (max-width: 600px) and (orientation:portrait) {
+@media screen and (max-width: 1000px) and (orientation:portrait) {
     
     .body {
         width: 100%;

@@ -9,7 +9,7 @@
 .body {
     width: 256px;
     margin: auto;
-    margin-top: 90px;
+    margin-top: 50px;
 }
 
 .flex_body {
@@ -75,7 +75,7 @@ header {
 
 .content_body bottom {
     position: fixed;
-    bottom: 20%;
+    bottom: 10%;
 }
 
 .return_link {

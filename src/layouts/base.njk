@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6" />
+        <title>{% if title %}{{ title }} | {% endif %}Nicholas Way</title>
+        <link rel="stylesheet" href="/css/style.css" />
+        {% block extra_head %}{% endblock %}
+    </head>
+    <body>
+        {%if include_header %}
+            {% include "header.njk" %}
+        {% endif %}
+
+        <main>
+            {{ content | safe }}
+        </main>
+        {% block scripts %}{% endblock %}
+        <!-- optional footer -->
+    </body>
+</html>

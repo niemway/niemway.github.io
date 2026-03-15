@@ -1,0 +1,24 @@
+<nav>
+    <header>
+        <div class="nav_header">
+            <a href="/">
+                <h1>Nicholas Way</h1>
+            </a>
+        </div>
+        <div class="nav_links">
+            <a href="/about/" {% if page.url == '/about/' %}style="font-weight: bold"{% endif %}>About</a>
+            <div class="dropdown">
+                <a href="/portfolio/" {% if '/portfolio/' in page.url %}style="font-weight: bold"{% endif %}>Portfolio</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/portfolio/bieg2d/">bieg2D</a></li>
+                    <li><a href="/portfolio/spirovr/">SpiroVR</a></li>
+                    <li><a href="/portfolio/ballroom_problem/">The Ballroom Problem</a></li>
+                    <li><a href="/portfolio/route/">Route</a></li>
+                </ul>
+            </div>
+            <!--<a href="/blog/" {% if page.url == '/blog/' %}style="font-weight: bold"{% endif %}>Blog</a>-->
+            <a href="/resume/" {% if page.url == '/resume/' %}style="font-weight: bold"{% endif %}>Resume</a>
+            <a href="/contact/" {% if page.url == '/contact/' %}style="font-weight: bold"{% endif %}>Contact</a>
+        </div>
+    </header>
+</nav>

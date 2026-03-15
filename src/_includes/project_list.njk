@@ -1,0 +1,31 @@
+<div>
+    <!-- Filter buttons -->
+    <div class="filter-buttons">
+        <button data-filter="all">All</button>
+        <button data-filter="2026">2026</button>
+        <button data-filter="2025">2025</button>
+        <button data-filter="2024">2024</button>
+        <button data-filter="2023">2023</button>
+        <button data-filter="2022">2022</button>
+        <button data-filter="2021">2021</button>
+        <button data-filter="Unity">Unity</button>
+        <button data-filter="Unreal Engine">Unreal Engine</button>
+        <button data-filter="C++">C++</button>
+        <button data-filter="C#">C#</button>
+        <button data-filter="Python">Python</button>
+        <button data-filter="JavaScript">JavaScript</button>
+        <button data-filter="HTML">HTML</button>
+        <button data-filter="CSS">CSS</button>
+        <button data-filter="Digital Art">Digital Art</button>
+        <button data-filter="3D Art">3D Art</button>
+        <!-- add more as needed -->
+    </div>
+
+    <!-- Container for project cards -->
+    <div class="project-grid" id="project-grid"></div>
+</div>
+
+<!-- Embed project data -->
+<script id="project-data" type="application/json">
+{{ collections.projects | projectData | json }}
+</script>

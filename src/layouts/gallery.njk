@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6" />
+        <title>{% if title %}{{ title }} | {% endif %}Nicholas Way</title>
+        <link rel="stylesheet" href="/css/style.css" />
+        {% block extra_head %}{% endblock %}
+    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Footer styling */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Important counters styling in footer */
+        .status-text {
+            font-size: 1.1em;
+            color: #333;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .status-text .counter {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #d1e7ff;
+            color: #333;
+        }
+
+        .time_left {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #ffd4d1;
+            color: #333;
+        }
+
+        /* Gallery area styling */
+        .gallery_area {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            gap: 20px;
+            /*padding: 0 8%;*/
+            padding-bottom: 60px; /* Extra space for footer visibility */
+        }
+
+        /* Calendar day card styling */
+        .calendar_day {
+            border: 1px solid #8f8f8f;
+            border-radius: 8px;
+            /*box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);*/
+            padding: 10px;
+            width: 300px; /* Adjusted width */
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        /* Missed calendar day card styling */
+        .missed_calendar_day {
+            background-color: #fcfefd;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            width: 300px; /* Adjusted width */
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        /* Hover effect for calendar day cards */
+        .calendar_day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Date label styling */
+        .date_label {
+            font-weight: bold;
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Theme label styling */
+        .theme_label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Process Video Link styling */
+        a.process_video_link {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+            font-family: Arial, sans-serif;
+            display: inline-block;
+        }
+
+        /* Sketchfab embed wrapper and image styling */
+        .sketchfab-embed-wrapper,
+        .skip-image {
+            margin: 0 auto;
+            width: 280px; /* Adjusted width */
+            height: 280px; /* Adjusted height */
+        }
+
+        /* Styling for the skip day image */
+        .skip-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* ===== Tooltips ===== */
+        .tooltip-target {
+            position: relative;
+            cursor: help;
+            outline: none;
+        }
+
+        /* Bubble */
+        .tooltip-target[data-tooltip]::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            left: 50%;
+            bottom: calc(100% + 10px);
+            transform: translateX(-50%) translateY(4px) scale(0.98);
+            background: #111;
+            color: #fff;
+            font:
+                500 0.9rem/1.2 Arial,
+                sans-serif;
+            padding: 8px 10px;
+            border-radius: 6px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition:
+                opacity 0.12s ease,
+                transform 0.12s ease;
+            z-index: 1000;
+        }
+
+        /* Arrow */
+        .tooltip-target[data-tooltip]::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 100%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #111;
+            opacity: 0;
+            transition: opacity 0.12s ease;
+        }
+
+        /* Show on hover/focus (mouse + keyboard) */
+        .tooltip-target:hover::after,
+        .tooltip-target:hover::before,
+        .tooltip-target:focus-visible::after,
+        .tooltip-target:focus-visible::before {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0) scale(1);
+        }
+
+        /* Prefer-reduced-motion: skip the animation */
+        @media (prefers-reduced-motion: reduce) {
+            .tooltip-target[data-tooltip]::after {
+                transition: none;
+            }
+        }
+    </style>
+    <body>
+        {%if include_header %} {% include "header.njk" %} {% endif %}
+
+        <main>{{ content | safe }}</main>
+        {% block scripts %}{% endblock %}
+        <!-- optional footer -->
+    </body>
+</html>

@@ -1,0 +1,273 @@
+---
+layout: base.njk
+title: Portfolio Timeline
+include_header: true
+---
+<div class="content">
+            <div class="body_header">
+                <h1>Portfolio</h1>
+            </div>
+            <div class="body">
+                <div class="project_row_container">
+                    <div class="project_thumbnail">
+                        <a href="/projects/bieg2d/">
+                            <img
+                                src="/images/cover_bieg2D.gif"
+                                alt="bieg2D"
+                            />
+                            <span class="project_name">bieg2D</span>
+                        </a>
+                    </div>
+                    <div class="project_thumbnail">
+                        <a href="/projects/spirovr">
+                            <img
+                                src="/images/cover_spirovr.gif"
+                                alt="SpiroVR"
+                            />
+                            <span class="project_name">SpiroVR</span>
+                        </a>
+                    </div>
+                    <div class="project_thumbnail">
+                        <a href="/projects/ballroom_problem/">
+                            <img
+                                src="/images/cover_ballroom.png"
+                                alt="Ballroom Problem"
+                            />
+                            <span class="project_name"
+                                >The Ballroom Problem</span
+                            >
+                        </a>
+                    </div>
+                    <div class="project_thumbnail">
+                        <a href="/projects/route/">
+                            <img
+                                src="/images/cover_route.gif"
+                                alt="Route"
+                            />
+                            <span class="project_name">Route</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="spacer" style="height: 30px"></div>
+                <div class="main_header">
+                    <h2>All Projects</h2>
+                </div>
+                <div
+                    class="index_row_container"
+                    style="
+                        width: 95%;
+                        transform: none;
+                        margin: 10px auto;
+                        padding-top: 20px;
+                        padding-bottom: 10px;
+                    "
+                >
+                    <div class="main_header">
+                        <p>2026</p>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://bieg2d.github.io/bieg2D_docs/">
+                            <p>Updated Portfolio Website</p>
+                        </a>
+                        <skill> March </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://bieg2d.github.io/bieg2D_docs/">
+                            <p>Der Narrenmarsch</p>
+                        </a>
+                        <skill> March </skill>
+                    </div>
+                    <div class="main_header">
+                        <p>2025</p>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://bieg2d.github.io/bieg2D_docs/">
+                            <p>Project Hello World</p>
+                        </a>
+                        <skill> December </skill>
+                    </div>
+                    <div class="main_header">
+                        <p>2024</p>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://bieg2d.github.io/bieg2D_docs/">
+                            <p>bieg2D Documentation (WIP)</p>
+                        </a>
+                        <skill> In Progress </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="/projects/bieg2d/">
+                            <p>bieg2D (WIP)</p>
+                        </a>
+                        <skill> In Progress </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="/">
+                            <p>Portfolio Website</p>
+                        </a>
+                        <skill> June </skill>
+                    </div>
+                    <div class="index_row">
+                        <a
+                            href="https://store.steampowered.com/app/2880650/Soul_of_the_Forest/"
+                        >
+                            <p>Soul of the Forest</p>
+                        </a>
+                        <skill> May </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="/projects/spirovr/"> <p>SpiroVR</p> </a>
+                        <skill> April </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://dexeter.itch.io/deadbeats">
+                            <p>DeadBeats</p>
+                        </a>
+                        <skill> April </skill>
+                    </div>
+                    <div class="main_header">
+                        <p>2023</p>
+                    </div>
+                    <div class="index_row">
+                        <!-- october -->
+                        <a href="/projects/ballroom_problem/">
+                            <p>The Ballroom Problem</p>
+                        </a>
+                        <skill> October </skill>
+                    </div>
+                    <div class="index_row">
+                        <!-- april -->
+                        <a
+                            href="https://store.steampowered.com/app/2365570/Curse_of_the_Corsair/"
+                        >
+                            <p>Curse of the Corsair</p>
+                        </a>
+                        <skill> April </skill>
+                    </div>
+                    <div class="index_row">
+                        <!-- april -->
+                        <a href="https://eggshelld.itch.io/planner-panic">
+                            <p>Urban Opposition</p>
+                        </a>
+                        <skill> April </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="/projects/route/" style="display: flex">
+                            <p>Route:</p>
+                            <p style="font-size: 12pt">
+                                A Game of Merchants, Roads and Towns
+                            </p>
+                        </a>
+                        <skill> April </skill>
+                    </div>
+                    <div class="index_row">
+                        <!-- march -->
+                        <a
+                            href="https://store.steampowered.com/app/2251660/Subtension/"
+                        >
+                            <p>Subtension</p>
+                        </a>
+                        <skill> March </skill>
+                    </div>
+                    <div class="index_row">
+                        <!-- march -->
+                        <a href="https://eggshelld.itch.io/planner-panic">
+                            <p>Overdeveloped!</p>
+                        </a>
+                        <skill> March </skill>
+                    </div>
+                    <div class="main_header">
+                        <p>2022</p>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://eggshelld.itch.io/planner-panic">
+                            <!-- end of year (december ish) -->
+                            <p>Projekt Weltraum</p>
+                        </a>
+                        <skill> December </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://eggshelld.itch.io/damned">
+                            <!-- october -->
+                            <p>DAMNED</p>
+                        </a>
+                        <skill> October </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://eggshelld.itch.io/makin-waves">
+                            <!-- july -->
+                            <p>Makin' Waves!</p>
+                        </a>
+                        <skill> July </skill>
+                    </div>
+                    <div class="index_row">
+                        <!-- march -->
+                        <a
+                            href="https://wolverinesoft-studio.itch.io/twin-blades"
+                        >
+                            <p>Twin Blades' Vengeance</p>
+                        </a>
+                        <skill> March </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://eggshelld.itch.io/electric-sheep">
+                            <!-- april -->
+                            <p>Electric Sheep</p>
+                        </a>
+                        <skill> April </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://eggshelld.itch.io/skyline">
+                            <!-- march -->
+                            <p>Skyline</p>
+                        </a>
+                        <skill> March </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://eggshelld.itch.io/othersider">
+                            <!-- january -->
+                            <p>Othersider</p>
+                        </a>
+                        <skill> January </skill>
+                    </div>
+                    <div class="main_header">
+                        <p>2021</p>
+                    </div>
+                    <div class="index_row">
+                        <a
+                            href="https://store.steampowered.com/app/2205380/Ragnark_TD/"
+                        >
+                            <!-- october -->
+                            <p>Ragnar&#246;k TD</p>
+                        </a>
+                        <skill> December </skill>
+                    </div>
+                    <div class="index_row">
+                        <a href="https://eggshelld.itch.io/sea-of-silence">
+                            <!-- october -->
+                            <p>Sea of Silence</p>
+                        </a>
+                        <skill> October </skill>
+                    </div>
+                    <div class="index_row">
+                        <a
+                            href="https://eggshelld.itch.io/bloodstained-puppet-2"
+                        >
+                            <!-- april -->
+                            <p>Bloodstained Puppet</p>
+                        </a>
+                        <skill> April </skill>
+                    </div>
+                    <div class="index_row">
+                        <a
+                            href="https://eggshelld.itch.io/the-death-of-santa-claus"
+                        >
+                            <!-- march -->
+                            <p>The Death of Santa Claus</p>
+                        </a>
+                        <skill> March </skill>
+                    </div>
+                </div>
+                <div class="spacer" style="height: 10px"></div>
+            </div>
+        </div>

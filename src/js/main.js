@@ -9,7 +9,7 @@ const scene = new THREE.Scene();
 // Determine the size of the window
 const body = document.body;
 const windowSize = {
-  width: window.innerWidth / 2,
+  width: window.innerWidth,
   height: window.innerHeight / 2,
 };
 

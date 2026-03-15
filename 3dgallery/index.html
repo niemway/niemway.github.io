@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6" />
+        <title>3D Gallery | Nicholas Way</title>
+        <link rel="stylesheet" href="/css/style.css" />
+        
+    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Footer styling */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Important counters styling in footer */
+        .status-text {
+            font-size: 1.1em;
+            color: #333;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .status-text .counter {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #d1e7ff;
+            color: #333;
+        }
+
+        .time_left {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #ffd4d1;
+            color: #333;
+        }
+
+        /* Gallery area styling */
+        .gallery_area {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            gap: 20px;
+            /*padding: 0 8%;*/
+            padding-bottom: 60px; /* Extra space for footer visibility */
+        }
+
+        /* Calendar day card styling */
+        .calendar_day {
+            border: 1px solid #8f8f8f;
+            border-radius: 8px;
+            /*box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);*/
+            padding: 10px;
+            width: 300px; /* Adjusted width */
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        /* Missed calendar day card styling */
+        .missed_calendar_day {
+            background-color: #fcfefd;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            width: 300px; /* Adjusted width */
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        /* Hover effect for calendar day cards */
+        .calendar_day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Date label styling */
+        .date_label {
+            font-weight: bold;
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Theme label styling */
+        .theme_label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Process Video Link styling */
+        a.process_video_link {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+            font-family: Arial, sans-serif;
+            display: inline-block;
+        }
+
+        /* Sketchfab embed wrapper and image styling */
+        .sketchfab-embed-wrapper,
+        .skip-image {
+            margin: 0 auto;
+            width: 280px; /* Adjusted width */
+            height: 280px; /* Adjusted height */
+        }
+
+        /* Styling for the skip day image */
+        .skip-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* ===== Tooltips ===== */
+        .tooltip-target {
+            position: relative;
+            cursor: help;
+            outline: none;
+        }
+
+        /* Bubble */
+        .tooltip-target[data-tooltip]::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            left: 50%;
+            bottom: calc(100% + 10px);
+            transform: translateX(-50%) translateY(4px) scale(0.98);
+            background: #111;
+            color: #fff;
+            font:
+                500 0.9rem/1.2 Arial,
+                sans-serif;
+            padding: 8px 10px;
+            border-radius: 6px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition:
+                opacity 0.12s ease,
+                transform 0.12s ease;
+            z-index: 1000;
+        }
+
+        /* Arrow */
+        .tooltip-target[data-tooltip]::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 100%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #111;
+            opacity: 0;
+            transition: opacity 0.12s ease;
+        }
+
+        /* Show on hover/focus (mouse + keyboard) */
+        .tooltip-target:hover::after,
+        .tooltip-target:hover::before,
+        .tooltip-target:focus-visible::after,
+        .tooltip-target:focus-visible::before {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0) scale(1);
+        }
+
+        /* Prefer-reduced-motion: skip the animation */
+        @media (prefers-reduced-motion: reduce) {
+            .tooltip-target[data-tooltip]::after {
+                transition: none;
+            }
+        }
+    </style>
+    <body>
+         <nav>
+    <header>
+        <div class="nav_header">
+            <a href="/">
+                <h1>Nicholas Way</h1>
+            </a>
+        </div>
+        <div class="nav_links">
+            <a href="/about/" >About</a>
+            <div class="dropdown">
+                <a href="/portfolio/" >Portfolio</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/portfolio/bieg2d/">bieg2D</a></li>
+                    <li><a href="/portfolio/spirovr/">SpiroVR</a></li>
+                    <li><a href="/portfolio/ballroom_problem/">The Ballroom Problem</a></li>
+                    <li><a href="/portfolio/route/">Route</a></li>
+                </ul>
+            </div>
+            <!--<a href="/blog/" >Blog</a>-->
+            <a href="/resume/" >Resume</a>
+            <a href="/contact/" >Contact</a>
+        </div>
+    </header>
+</nav>
+ 
+
+        <main><div class="content">
+<div class="body_header">
+        <h1>3D Art Portfolio</h1>
+    </div>
+    <div class="body">
+    <p>Here is a collection of my 3D models created in Blender.<br>All materials are made by me, painted by hand or procedurally in shaders.</p>
+    </div>
+<div class="gallery_area">
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/b12281b0d00d41b2aff8541a8829e307/embed?autostart=1'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/6f2475476a5a48ddaba957ab53727f64/embed?autostart=1'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/ef33876bbb0146fe85eaa96ce39caf8e/embed?autostart=1'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/6b2c2a4bdd554fb2a00d70d8274856e3/embed?autostart=1'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/bddcadecfc2646df80e166afb3fe9f3d/embed?autostart=1'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/6ba37326ad414465a96038a184791100/embed?autostart=1'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/2db13999c28b4db3a16fb00a7962b22d/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/c61f79e2d7574610a6c0cfe897477689/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/eee7d9d16d9e41fbad27947ec216a95b/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/8440f4587d6e44d4a6ecf88443940bd9/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/1a9f4b57a5e94af6a500fb04a94d3e0d/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/1f1e839ca860442ea0d7949929fdc051/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/e3f19d8f36944232bbff8ae10a1475a6/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/bf6cbb1a7b0346cb9f6fdd21e969a083/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/ea6b9523fc534605ab0304e473d7202b/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/84c3c26e45da4ad6bc54199741a99fe8/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/65d67c94b59841738ab81d34d590ed63/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/fb0382991fcc49f8bc2b3cbee1be9915/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/54a421ebfda94701898fc3a49559f4be/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/ac11abec1d8f46eda0ce049b4c2c06b0/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/cd0e542c5b57450b81e8b7635411cfb3/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/3685f261158a462ea4465d9f0c59ccc4/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/e5d96b2a814146e1b77dc90176f37ca6/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/6d1f33446d82444883793f796ad8597d/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/7a04abf981b0409abbb2902b273a5b31/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/59fa3e3359674ea78f56e9f84fb7e55e/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/bbf429232f5a43a68adadb6170cec650/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/300846c2b8584738afb9626c202ea137/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/9c0216bc3a3a4caf8ce4d11f3524fbfa/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/87edfeb18cf2466e951d06b40cbfea34/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/4ab578d7ffb64fb6ae26e02cc57cfc31/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/0d11ef639f394e098c52682dea37e680/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/eb6f7791df524592be06870967ca01b5/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/77634e2db5bf458a9ab0a3672e2a591b/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/bdb49f5369ce424e8fa63bb8c094ca24/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/381f31f0bc6847a4b93a509754a85bda/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/afccef62633d41f9ba1de836a269bd20/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/fab245fb63dd48c2b78457e1a000bbce/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/c81cc23984bb4291ad086f2bd6777d83/embed'></iframe></div></div>
+    <div class='calendar_day'><div class='sketchfab-embed-wrapper'><iframe loading='lazy' title='Key' frameborder='0' allowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width='280' height='280' src='https://sketchfab.com/models/87f614f0887e4776a2857cf647017fb4/embed'></iframe></div></div>
+</div>
+</main>
+        
+        <!-- optional footer -->
+    </body>
+</html>

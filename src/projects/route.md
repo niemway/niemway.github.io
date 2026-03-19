@@ -10,12 +10,12 @@ link: "/projects/route/"
 include_header: true
 ---
 
-<div class="content" style="text-align: center">
+<div class="content" style="text-align: center; width: 60%;">
     <!-- title image -->
     <img
-        src="/static/images/route_page/route_logo.png"
+        src="/images/route_page/route_logo.png"
         alt="Route Logo"
-        style="width: 100%; margin-top: -10px"
+        style="width: 60%; margin-top: -10px"
     />
     <!-- download button (link to spirovr.github.io) -->
     <!-- background box -->
@@ -43,12 +43,12 @@ include_header: true
                 Play Online!
             </div>
         </a>
-        <a href="https://routesgame.github.io/" target="_blank">
+        <a href="https://eggshelld.itch.io/route" target="_blank">
             <div
                 class="project_name"
                 style="font-size: 30px; color: #d7bfa1; margin: 20px"
             >
-                Download Here
+                See the game on itch.io
             </div>
         </a>
     </div>

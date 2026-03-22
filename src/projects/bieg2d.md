@@ -6,7 +6,7 @@ month_id: 7
 year: 2024
 tech: ["Lua", "C++", "Game Engine"]
 image: "/images/cover_bieg2D.gif"
-link: "/projects/bieg2D/"
+link: "/projects/bieg2d/"
 include_header: true
 ---
 

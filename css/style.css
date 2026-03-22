@@ -86,10 +86,18 @@ h6 {
 
 .body_text {
     font-family: var(--font-body);
-    font-size: 100%;
-    line-height: 1.6;
     margin-top: var(--space-md);
-    max-width: 65ch; /* optimal reading length */
+    max-width: 65ch; /* optimal reading length
+    /*width: var(--content-width);*/
+    margin: 25px auto 0;
+    /*width: 100%;*/
+    font-size: large;
+    line-height: 26px;
+    min-height: 0;
+    p {
+        margin-bottom: var(--space-md);
+        text-indent: var(--space-md);
+    }
 }
 
 /* -------------------- Layout Containers -------------------- */

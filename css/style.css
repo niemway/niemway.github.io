@@ -120,6 +120,9 @@ h6 {
         font-size: large;
         line-height: 26px;
         min-height: 0;
+        a {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -358,72 +361,6 @@ header {
     margin-top: var(--space-xl);
 }
 
-/* -------------------- Responsive Design -------------------- */
-@media screen and (max-width: 1000px) and (orientation: portrait) {
-    .main_header {
-        font-size: 2.3em;
-    }
-
-    .body {
-        width: 80%;
-        margin-top: 10%;
-    }
-
-    .content {
-        width: 100%;
-        margin-top: 5%;
-    }
-
-    .content_body {
-        text-align: center;
-    }
-
-    .content_body bottom {
-        bottom: 20%;
-    }
-
-    .index_row_container {
-        width: auto;
-        padding: 10%;
-    }
-
-    .index_row {
-        font-size: 15pt;
-    }
-
-    .project_row {
-        line-height: normal;
-    }
-
-    .project_name {
-        font-size: 2em;
-        padding: 0;
-    }
-
-    /* Mobile navigation */
-    nav {
-        position: fixed;
-        top: auto;
-        bottom: 0;
-        width: 100%;
-        height: var(--nav-height);
-        border-top: 1px solid var(--color-border);
-        border-bottom: none;
-    }
-
-    .nav_header {
-        display: none;
-    }
-
-    .nav_links a::after {
-        display: none; /* remove underline effect on mobile */
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: none; /* no hover on mobile – consider tap instead */
-    }
-}
-
 .filter-buttons {
     /*display: flex;*/
     gap: 10px;
@@ -525,4 +462,75 @@ details[open] summary::before {
 }
 .resume-details p {
     margin: 0.2rem 0;
+}
+
+/* -------------------- Responsive Design -------------------- */
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+    .main_header {
+        font-size: 2.3em;
+    }
+
+    .body {
+        width: 80%;
+        margin-top: 10%;
+    }
+
+    .content {
+        width: 90%;
+        margin-top: 5%;
+    }
+
+    .content_body {
+        text-align: center;
+    }
+
+    .content_body bottom {
+        bottom: 20%;
+    }
+
+    .index_row_container {
+        width: auto;
+        padding: 10%;
+    }
+
+    .index_row {
+        font-size: 15pt;
+    }
+
+    .project_row {
+        line-height: normal;
+    }
+
+    .project_name {
+        font-size: 2em;
+        padding: 0;
+    }
+
+    /* Mobile navigation */
+    nav {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: var(--nav-height);
+        border-top: 1px solid var(--color-border);
+        border-bottom: none;
+    }
+
+    .nav_header {
+        display: none;
+    }
+
+    .nav_links a::after {
+        display: none; /* remove underline effect on mobile */
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none; /* no hover on mobile – consider tap instead */
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 20%;
+    }
 }

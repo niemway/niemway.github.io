@@ -10,4 +10,11 @@ link: "/projects/websketcher/"
 include_header: true
 ---
 
-Websketcher is an in-progress tool for helping users quickly draft websites from just a sketch!
+<div class="content">
+    <div class="body">
+        <p>
+        Websketcher is an in-progress tool for helping users quickly draft websites from just a sketch!
+        </p>
+        <a href="https://github.com/websketcher-app/Websketcher">Track its progress here</a>
+    </div>
+</div>

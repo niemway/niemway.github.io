@@ -1,13 +1,13 @@
 <div>
     <!-- Filter buttons -->
-    <div class="filter-buttons">
-        <button data-filter="all">All</button>
+    <div class="flex flex-wrap gap-y-2 *:px-2 font-mono font-light *:border border-stone-200/60 my-2 pr-4 pl-1 px-0.5 w-full *:hover:text-black *:hover:border-link-orange *:hover:bg-link-orange *:hover:cursor-pointer">
+        <button data-filter="all" class="mr-4">All</button>
         <button data-filter="2026">2026</button>
         <button data-filter="2025">2025</button>
         <button data-filter="2024">2024</button>
         <button data-filter="2023">2023</button>
         <button data-filter="2022">2022</button>
-        <button data-filter="2021">2021</button>
+        <button data-filter="2021" class="mr-4">2021</button>
         <button data-filter="Unity">Unity</button>
         <button data-filter="Unreal Engine">Unreal Engine</button>
         <button data-filter="C++">C++</button>
@@ -20,9 +20,8 @@
         <button data-filter="3D Art">3D Art</button>
         <!-- add more as needed -->
     </div>
-
     <!-- Container for project cards -->
-    <div class="project-grid" id="project-grid"></div>
+    <div class="w-full sm:w-xl md:w-full my-8 grid gap-8 grid-cols-2 md:grid-cols-3 md:mb-8 mx-auto" id="project-grid"></div>
 </div>
 
 <!-- Embed project data -->

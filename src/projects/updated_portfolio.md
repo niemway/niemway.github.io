@@ -1,5 +1,5 @@
 ---
-title: Updated Portfolio Wbsite
+title: Updated Portfolio Website
 month: March
 month_id: 3
 year: 2026

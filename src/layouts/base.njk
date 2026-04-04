@@ -1,21 +1,21 @@
 <!doctype html>
-<html>
+<html lang="en" class="bg-light-back dark:bg-dark-back">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=0.6" />
         <title>{% if title %}{{ title }} | {% endif %}Nicholas Way</title>
-        <link rel="stylesheet" href="/css/style.css" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+        <link rel="stylesheet" href="/css/output.css" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
         {% block extra_head %}{% endblock %}
     </head>
-    <body>
-        {%if include_header %}
-            {% include "header.njk" %}
-        {% endif %}
+    <body class="text-stone-800 dark:text-stone-300 text-lg m-4">
+        {%if include_header %} {% include "header.njk" %} {% endif %}
 
-        <main>
-            {{ content | safe }}
-        </main>
+        <main class="max-w-3xl mx-auto ">{{ content | safe }}</main>
         {% block scripts %}{% endblock %}
-        <!-- optional footer -->
+        {%if texture %}
+            <div class="pointer-events-none absolute top-0 left-0 h-full w-full"
+            style="mix-blend-mode:overlay;background:url(/images/home-texture.6b3e9111.png)
+            repeat-y top center;"></div>
+        {% endif %}
     </body>
 </html>

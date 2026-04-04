@@ -1,8 +1,8 @@
-import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
+import * as THREE from "https://unpkg.com/three@0.128.0/build/three.module.js";
 // To allow for the camera to move around the scene
-import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
+import { OrbitControls } from "https://unpkg.com/three@0.128.0/examples/jsm/controls/OrbitControls.js";
 // To allow for importing the .gltf file
-import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
+import { GLTFLoader } from "https://unpkg.com/three@0.128.0/examples/jsm/loaders/GLTFLoader.js";
 
 const scene = new THREE.Scene();
 
@@ -64,9 +64,9 @@ function animate() {
 }
 
 window.addEventListener("resize", () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.aspect = window.innerWidth / (window.innerHeight / 2);
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+  renderer.setSize(window.innerWidth, window.innerHeight / 2);
 });
 
 animate();

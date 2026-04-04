@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# run_websketcher
+
+set -Eeuo pipefail
+set -x
+
+npm run serve

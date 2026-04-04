@@ -1,43 +1,53 @@
 <!doctype html>
-<html>
+<html lang="en" class="bg-light-back dark:bg-dark-back">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=0.6" />
         <title>Contact | Nicholas Way</title>
-        <link rel="stylesheet" href="/css/style.css" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+        <link rel="stylesheet" href="/css/output.css" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
         
     </head>
-    <body>
-        
-            <nav>
+    <body class="text-stone-800 dark:text-stone-300 text-lg m-4">
+         <nav>
     <header>
-        <div class="nav_header">
-            <a href="/">
-                <h1>Nicholas Way</h1>
+        <div class="m-4 flex md:justify-between justify-center items-center mx-auto max-w-screen-xl border-2 rounded-2xl border-light-border/60 dark:border-dark-border/60 p-3 pb-2">
+            <a href="/" class="flex items-center">
+                <span class="font-serif self-center text-2xl">
+                    <h1>Nicholas Way</h1>
+                </span>
             </a>
-        </div>
-        <div class="nav_links">
-            <a href="/about/" >About</a>
-            <div class="dropdown">
-                <a href="/portfolio/" >Portfolio</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/projects/bieg2d/">bieg2D</a></li>
-                    <li><a href="/portfolio/spirovr/">SpiroVR</a></li>
-                    <li><a href="https://eggshelld.itch.io/ballroom-problem">The Ballroom Problem</a></li>
-                    <li><a href="/projects/route/">Route</a></li>
-                </ul>
+            <div class="m-4 md:m-0 fixed bottom-0 left-0 right-0 backdrop-blur-md bg-light-back/40 dark:bg-dark-back/30 border-2 border-light-border/60 dark:border-dark-border/60
+                flex items-center justify-center gap-3 font-mono p-3 z-50 rounded-2xl
+                md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:bottom-auto md:top-auto md:bg-transparent md:border-0 md:p-0 md:backdrop-blur-none md:z-auto">
+                <a href="/about/" class="border border-transparent hover:border-link-orange hover:text-link-orange px-2 py-1 ">About</a>
+                <div class="relative group">
+                    <a href="/portfolio/" class="inline-flex items-center gap-1 border border-transparent hover:border-link-orange hover:text-link-orange px-2 py-1">
+                        Portfolio
+                        <svg class="w-3 h-3 transition-transform group-hover:rotate-180 hidden md:inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <ul class="absolute left-0 mt-2 w-48 outline-offset-4 bg-light-back/90 dark:bg-dark-back/90 rounded-xl outline-2 outline-stone-800/60 dark:outline-stone-200/60 shadow-lg p-2 z-20
+                        opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200
+                        md:top-full md:bottom-auto hidden md:block
+                        bottom-full mb-2 md:mb-0">
+                        <li><a href="/projects/bieg2d/" class="block px-2 py-2 border border-transparent hover:border-link-orange hover:text-link-orange">bieg2D</a></li>
+                        <li><a href="/portfolio/spirovr/" class="block px-2 py-2 border border-transparent hover:border-link-orange hover:text-link-orange">SpiroVR</a></li>
+                        <li><a href="https://eggshelld.itch.io/ballroom-problem" class="block px-2 py-2 border border-transparent hover:border-link-orange hover:text-link-orange">The Ballroom Problem</a></li>
+                        <li><a href="/projects/route/" class="block px-2 py-2 border border-transparent hover:border-link-orange hover:text-link-orange">Route</a></li>
+                    </ul>
+                </div>
+                <!--<a href="/blog/" class="border border-transparent hover:border-link-orange hover:text-link-orange px-2 py-1 ">Blog</a>-->
+                <a href="/resume/" class="border border-transparent hover:border-link-orange hover:text-link-orange px-2 py-1 ">Resume</a>
+                <a href="/contact/" class="border border-transparent hover:border-link-orange hover:text-link-orange px-2 py-1 font-bold">Contact</a>
             </div>
-            <!--<a href="/blog/" >Blog</a>-->
-            <a href="/resume/" >Resume</a>
-            <a href="/contact/" style="font-weight: bold">Contact</a>
+            <div class="invisible"></div>
         </div>
     </header>
 </nav>
+ 
 
-        
-
-        <main>
-            <div class="content">
+        <main class="max-w-3xl mx-auto "><div class="content">
     <div
         style="
             display: flex;
@@ -97,9 +107,8 @@
             src="https://kit.fontawesome.com/817e55e7a7.js"
             crossorigin="anonymous"
         ></script>
-
-        </main>
+</main>
         
-        <!-- optional footer -->
+        
     </body>
 </html>

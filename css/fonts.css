@@ -64,6 +64,16 @@
 }
 
 @font-face {
+    font-family: "Routed Gothic";
+    font-display: swap;
+    font-weight: 400;
+    font-stretch: expanded;
+    font-style: normal;
+    src: url("/static/fonts/RoutedGothic.woff2") format("woff2");
+    -webkit-font-smoothing: antialiased;
+}
+
+/*@font-face {
     font-family: "Monospace";
     font-display: swap;
     font-weight: 700;
@@ -71,4 +81,4 @@
     font-style: normal;
     src: url("/static/fonts/IosevkaSlab-ExtendedBold.woff2") format("woff2");
     -webkit-font-smoothing: antialiased;
-}
+}*/

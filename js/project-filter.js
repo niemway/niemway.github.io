@@ -19,14 +19,22 @@ document.addEventListener("DOMContentLoaded", function () {
     grid.innerHTML = filtered
       .map(
         (p) => `
-            <div class="project-card">
-                <a href="${p.link}">
-                    <img src="${p.image}" alt="${p.title}">
-                    <div class="project-title">${p.title}</div>
-                    <span class="skill">${p.month}</span>
-                    <span class="skill">${p.year}</span>
-                </a>
-            </div>
+        <div class="rounded-lg outline outline-light-border/60 dark:outline-dark-border/60 outline-offset-6">
+            <a href="${p.link}">
+                <div class="rounded-lg backdrop-blur-md bg-light-back p-4 shadow-sm h-full hover:shadow-2xl hover:-translate-y-3 hover:rotate-1 transition duration-300">
+                    <div class="h-45 w-full">
+                        <img src="${p.image}" alt="${p.title}" class="object-cover max-h-full rounded-lg">
+                    </div>
+                    <hr class="my-2 border-t border-t-stone-300 border-2">
+                    <div class="py-2">
+                      <div id="resize-text" class="text-lg font-semibold leading-tight text-gray-900 hover:underline">${p.title}</div>
+                      <span class="text-sm text-gray-500 font-mono">${p.month}</span>
+                      <span class="text-sm text-gray-500 font-mono">${p.year}</span>
+                    </div>
+                    <hr class="my-1 border-t border-t-stone-300 border-2">
+                </div>
+            </a>
+        </div>
         `,
       )
       .join("");

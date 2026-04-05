@@ -15,11 +15,11 @@ border_distance: 4
         <div class="flex justify-center" id="model"></div>
         <div class="fixed bottom-0 left-0 right-0 flex items-center justify-center p-4">
             <div class="p-4 text-stone-800 dark:text-stone-200 uppercase">
-                <div class="font-mono border-r border-light-border/60 dark:border-dark-border/60 *:*:backdrop-blur-sm">
-                    <a href="/about/"><div class="border border-light-border/60 dark:border-dark-border/60 my-2 pr-4 pl-1 px-0.5 w-full hover:text-link-orange hover:border-link-orange">About</div></a>
-                    <a href="/portfolio/"><div class="border border-light-border/60 dark:border-dark-border/60 my-2 pr-4 pl-1 px-0.5 w-full hover:text-link-orange hover:border-link-orange">Portfolio</div></a>
-                    <a href="/resume/"><div class="border border-light-border/60 dark:border-dark-border/60 my-2 pr-4 pl-1 px-0.5 w-full hover:text-link-orange hover:border-link-orange">Resume</div></a>
-                    <a href="/contact/"><div class="border border-light-border/60 dark:border-dark-border/60 my-2 pr-4 pl-1 px-0.5 w-full hover:text-link-orange hover:border-link-orange">Contact</div></a>
+                <div class="font-gothic border-r border-light-border/60 dark:border-dark-border/60 *:*:backdrop-blur-sm">
+                    <a href="/about/"><div class="text-2xl sm:text-lg border border-light-border/60 dark:border-dark-border/60 my-2 pr-4 pl-1 px-0.5 w-full hover:text-link-orange hover:border-link-orange">About</div></a>
+                    <a href="/portfolio/"><div class="text-2xl sm:text-lg border border-light-border/60 dark:border-dark-border/60 my-2 pr-4 pl-1 px-0.5 w-full hover:text-link-orange hover:border-link-orange">Portfolio</div></a>
+                    <a href="/resume/"><div class="text-2xl sm:text-lg border border-light-border/60 dark:border-dark-border/60 my-2 pr-4 pl-1 px-0.5 w-full hover:text-link-orange hover:border-link-orange">Resume</div></a>
+                    <a href="/contact/"><div class="text-2xl sm:text-lg border border-light-border/60 dark:border-dark-border/60 my-2 pr-4 pl-1 px-0.5 w-full hover:text-link-orange hover:border-link-orange">Contact</div></a>
                 </div>
             </div>
         </div>

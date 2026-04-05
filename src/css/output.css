@@ -1100,6 +1100,12 @@
       width: var(--container-xl);
     }
   }
+  .sm\:text-lg {
+    @media (width >= 40rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
   .md\:absolute {
     @media (width >= 48rem) {
       position: absolute;

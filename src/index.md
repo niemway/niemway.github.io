@@ -25,7 +25,7 @@ border_distance: 4
         </div>
     </div>
 </div>
-<div class="hidden md:block -z-1 inset-0 pointer-events-none absolute *:border-light-border/60 *:dark:border-dark-border/60">
+<div class="-z-1 inset-0 pointer-events-none absolute *:border-light-border/60 *:dark:border-dark-border/60">
     <div class="absolute top-18 bottom-0 border-y-2 border-x-2 rounded-2xl h-9/10" style="left: 4rem; right: 4rem;"></div>
 </div>
 

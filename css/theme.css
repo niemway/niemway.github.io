@@ -4,7 +4,9 @@
 @theme {
     --font-serif: "Canela Deck", serif;
     --font-mono: "Monospace", monospace;
-    --font-sans: "Routed Gothic", sans-serif;
+    --font-gothic: "Routed Gothic", sans-serif;
+    --font-futura: "Futura Regular", sans-serif;
+    --font-sans: "ZP", monospace;
     --color-link-orange: #df8c7f;
     --color-light-back: #f4f0e8;
     --color-dark-back: #0f172a;

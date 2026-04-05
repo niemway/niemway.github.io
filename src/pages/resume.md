@@ -2,6 +2,9 @@
 layout: base.njk
 title: Resume
 include_header: true
+border_distance: 3
+border_left: border-y-2 border-l-2 rounded-l-2xl border-dashed
+border_right: border-y-2 border-r-2 rounded-r-2xl border-dashed
 ---
 <div class="resume-page">
 <div class="content">
@@ -17,7 +20,7 @@ include_header: true
             <h3>PDF</h3>
         </a>
     </div>
-    <details open class="relative my-6 outline p-4 outline-light-border dark:outline-dark-border rounded-2xl">
+    <details open class="backdrop-blur-xs relative my-8 outline p-4 outline-light-border dark:outline-dark-border rounded-2xl">
         <summary class="ml-4 px-2 absolute -top-4 text-2xl font-serif bg-light-back dark:bg-dark-back">Education</summary>
         <div class="pt-2 grid grid-cols-4 *:my-2">
             <div class="resume-date font-mono text-light-border/60 dark:text-dark-border/60 text-sm">Sep 2021 – May 2026</div>
@@ -33,7 +36,7 @@ include_header: true
             </div>
         </div>
     </details>
-    <details open class="relative my-6 outline p-4 outline-light-border dark:outline-dark-border rounded-2xl">
+    <details open class="backdrop-blur-xs relative my-8 outline p-4 outline-light-border dark:outline-dark-border rounded-2xl">
         <summary class="ml-4 px-2 absolute -top-4 text-2xl font-serif bg-light-back dark:bg-dark-back">Experience</summary>
         <div class="pt-2 grid grid-cols-4 *:my-2">
             <div class="resume-date font-mono text-light-border/60 dark:text-dark-border/60 text-sm">Dec 2025 – Present</div>
@@ -69,7 +72,7 @@ include_header: true
             </div>
         </div>
     </details>
-    <details open class="relative my-6 outline p-4 outline-light-border dark:outline-dark-border rounded-2xl">
+    <details open class="backdrop-blur-xs relative my-8 mb-20 outline p-4 outline-light-border dark:outline-dark-border rounded-2xl">
         <summary class="ml-4 px-2 absolute -top-4 text-2xl font-serif bg-light-back dark:bg-dark-back">Skills & Hobbies</summary>
         <div class="resume-entry">
             <div class="resume-date"></div>

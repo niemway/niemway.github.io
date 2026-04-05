@@ -13,6 +13,20 @@
 }
 
 @font-face {
+    font-family: "ZP";
+    src: url("/static/fonts/main.woff2") format("woff2");
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "ZP";
+    src: url("/static/fonts/main.woff2") format("woff2");
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
     font-family: "Monospace";
     font-display: swap;
     font-weight: 100;

@@ -2,6 +2,9 @@
 layout: base.njk
 title: Portfolio
 include_header: true
+border_distance: 1
+border_left: border-y-2 border-l-2 rounded-l-2xl border-dashed
+border_right: border-y-2 border-r-2 rounded-r-2xl border-dashed
 ---
 <div class="content">
             <div class="font-serif text-8xl text-center text-mauve-800 dark:text-transparent dark:bg-linear-to-t bg-clip-text dark:from-mauve-500 dark:to-mauve-300 text-shadow">

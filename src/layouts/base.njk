@@ -7,10 +7,23 @@
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
         {% block extra_head %}{% endblock %}
     </head>
-    <body class="text-stone-800 dark:text-stone-300 text-lg m-4">
-        {%if include_header %} {% include "header.njk" %} {% endif %}
+    <body class="text-stone-800 dark:text-stone-300 text-lg p-4 min-h-screen">
+        <div class="relative">
+            {%if include_header %} {% include "header.njk" %} {% endif %}
+        </div>
 
-        <main class="max-w-3xl mx-auto ">{{ content | safe }}</main>
+        <main class="max-w-3xl mx-auto">
+            <div class="relative">
+            {% if border_left or border_right %}
+                {% set distance = border_distance | default(0) %}
+                <div class="-z-1 inset-0 pointer-events-none absolute *:border-light-border/60 *:dark:border-dark-border/60">
+                    <div class="w-5 absolute top-0 bottom-0 {{ border_left }}" style="left: {{ distance }}rem;"></div>
+                    <div class="w-5 absolute top-0 bottom-0 {{ border_right }}" style="right: {{ distance }}rem;"></div>
+                </div>
+            {% endif %}
+                {{ content | safe }}
+            </div>
+        </main>
         {% block scripts %}{% endblock %}
         {%if texture %}
             <div class="pointer-events-none absolute top-0 left-0 h-full w-full"

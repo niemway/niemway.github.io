@@ -25,7 +25,7 @@ include_header: true
         alt="bieg2D Logo"
     />
     <iframe
-        class="w-1/2 aspect-video mx-auto my-10"
+        class="w-1/2 aspect-video mx-auto my-10 rounded-2xl"
         src="https://www.youtube.com/embed/x2kTdPCbUUc"
         title="bieg2D Animator demo"
         frameborder="0"

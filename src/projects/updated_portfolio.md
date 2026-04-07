@@ -1,9 +1,9 @@
 ---
 title: Updated Portfolio Website
-month: March
-month_id: 3
+month: April
+month_id: 4
 year: 2026
-tech: ["JavaScript", "HTML", "Web", "three.js", "CSS"]
+tech: ["JavaScript", "HTML", "Web", "three.js", "CSS", "Tailwind"]
 image: "/images/updated_site.webp"
 link: "http://niemway.github.io/"
 permalink: false

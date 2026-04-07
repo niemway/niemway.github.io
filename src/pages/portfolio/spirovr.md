@@ -3,17 +3,15 @@ layout: base.njk
 title: SpiroVR
 include_header: true
 ---
-<div class="content" style="text-align: center">
+<div class="content text-center bg-white text-gray-700">
             <!-- title image -->
             <img
+                class="w-8/10 mx-auto"
                 src="/images/spirovr_banner.jpg"
                 alt="SpiroVR Logo"
-                style="width: 100%"
             />
-            <!-- spacer -->
-            <div class="spacer" style="height: 30px"></div>
             <!-- project description -->
-            <p style="font-size: 25px">
+            <p class="p-6 my-5" style="font-size: 25px">
                 SpiroVR is a concept for a virtual reality application that uses
                 breathing exercises to help treat lung conditions such as
                 Cycstic Fibrosis and COPD. The prototype was developed as part
@@ -22,7 +20,7 @@ include_header: true
             <div class="spacer" style="height: 30px"></div>
             <!-- youtube trailer embed -->
             <iframe
-                width="100%"
+                class="aspect-video mx-auto"
                 height="280"
                 src="https://www.youtube.com/embed/kC9qdszij2I"
                 title="SpiroVR Trailer 1"
@@ -33,12 +31,11 @@ include_header: true
             ></iframe>
             <!-- spacer -->
             <div class="spacer" style="height: 50px"></div>
-            <!-- download button (link to spirovr.github.io) -->
-            <a href="https://spiro-vr.github.io/" target="_blank">
-                <div class="project_name" style="font-size: 30px">
+            <div class="mx-auto text-center bg-linear-to-t dark:from-blue-300 dark:to-white text-4xl rounded-full p-10 hover:shadow-md outline-blue-200 hover:outline-4 w-fit">
+                <a href="https://spiro-vr.github.io/" target="_blank">
                     SpiroVR Website Here
-                </div>
-            </a>
+                </a>
+            </div>
             <!-- spacer -->
             <div class="spacer" style="height: 50px"></div>
         </div>
